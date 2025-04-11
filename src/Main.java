@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         double saldo = 1599.99;
-        int opcion;
+        int opcion = 0;
         Scanner input = new Scanner(System.in);
 
-        while (true) {
+        while (opcion != 9) {
             System.out.println("""
                     Escriba el número de la opción deseada:
                     1. Consultar Saldo
@@ -20,9 +20,8 @@ public class Main {
                     System.out.println("Su saldo es: $"+saldo);
                     break;
                 case 2:
-                    double retiro;
                     System.out.println("Ingrese el monto a retirar");
-                    retiro = input.nextDouble();
+                    double retiro = input.nextDouble();
                     if (retiro > saldo){
                         System.out.println("Saldo insuficiente.");
                     }
@@ -32,9 +31,8 @@ public class Main {
                     }
                     break;
                 case 3:
-                    double deposito;
                     System.out.println("Ingrese el monto a DEPOSITAR:");
-                    deposito = input.nextDouble();
+                    double deposito = input.nextDouble();
                     saldo+=deposito;
                     System.out.println("Su nuevo saldo es: $"+saldo);
                     break;
@@ -43,9 +41,6 @@ public class Main {
                     break;
                 default:
                     System.out.println("Opcion invalida");
-            }
-            if (opcion == 9){
-                break;
             }
         }
     }
